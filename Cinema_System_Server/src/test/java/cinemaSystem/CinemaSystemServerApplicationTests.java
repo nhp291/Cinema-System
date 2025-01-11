@@ -1,4 +1,4 @@
-package cinema_system_server;
+package cinemaSystem;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
