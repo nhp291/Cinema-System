@@ -111,6 +111,8 @@ CREATE TABLE Payments (
     amount DECIMAL(10, 2) NOT NULL,
     status ENUM('Successful', 'Failed', 'Pending') DEFAULT 'Pending',
     booking_id BIGINT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (booking_id) REFERENCES Bookings(id) ON DELETE CASCADE
 );
 
@@ -206,9 +208,11 @@ INSERT INTO Bookings (seat_id, status, customer_id, schedule_id) VALUES
 (2, 'Pending', 2, 2);
 
 -- Dữ liệu mẫu cho Payments
-INSERT INTO Payments (payment_method, amount, status, booking_id) VALUES
-('Credit Card', 10.00, 'Successful', 1),
-('PayPal', 12.50, 'Pending', 2);
+INSERT INTO Payments (payment_method, amount, status, booking_id, created_at, updated_at) 
+VALUES
+('Credit Card', 10.00, 'Successful', 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+('PayPal', 12.50, 'Pending', 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
 
 -- Dữ liệu mẫu cho MovieReviews
 INSERT INTO Movie_Reviews (rating, comment, movie_id, customer_id) VALUES

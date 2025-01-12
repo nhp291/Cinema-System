@@ -2,6 +2,9 @@ package cinemaSystem.controller;
 
 import cinemaSystem.model.Customer;
 import cinemaSystem.service.CustomerService;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Data
 @RestController
 @RequestMapping("/api/customers")
 public class CustomerController {
@@ -16,10 +20,6 @@ public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-//    @GetMapping("/")
-//    public List<Customer> getAllCustomers() {
-//        return customerService.getAllCustomers();
-//    }
     @GetMapping("/")
     public ResponseEntity<List<Customer>> getAllCustomers() {
         List<Customer> customers = customerService.getAllCustomers();
@@ -48,9 +48,9 @@ public class CustomerController {
         customerService.deleteCustomer(id);
     }
 
-//    @PutMapping("/{id}")
-//    public Customer updateCustomer(Long id, Customer updatedCustomer) {
-//        return customerService.updateCustomer(id, updatedCustomer);
-//    }
+    @PutMapping("/{id}")
+    public Customer updateCustomer(Long id, Customer updatedCustomer) {
+        return customerService.updateCustomer(id, updatedCustomer);
+    }
 
 }
