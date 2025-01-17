@@ -12,6 +12,7 @@ const App: React.FC = () => {
           <Route path="/example" component={ExampleComponent} />
         </Switch>
       </div>
+      <div className="bg-red-500 text-white"></div>
     </Router>
   );
 };
