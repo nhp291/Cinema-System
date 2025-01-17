@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from './Header';
+import Footer from './Footer';
 
 interface LayoutProps {
     children: React.ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const CinemaLayout: React.FC<LayoutProps> = ({ children }) => {
     return (
         <div className='layout'>
             <Header />
@@ -31,4 +31,4 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     );
 };
 
-export default Layout;
+export default CinemaLayout;
