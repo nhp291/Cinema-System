@@ -9,7 +9,7 @@ CREATE TABLE Roles (
     description TEXT
 );
 
--- Bảng Customers
+-- Bảng Customers (cập nhật thêm trường ngày sinh)
 CREATE TABLE Customers (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
@@ -17,6 +17,7 @@ CREATE TABLE Customers (
     phone VARCHAR(15) NOT NULL,
     address TEXT,
     role_id BIGINT,
+    date_of_birth DATE,  -- Thêm trường ngày tháng năm sinh
     FOREIGN KEY (role_id) REFERENCES Roles(id) ON DELETE SET NULL
 );
 
@@ -168,11 +169,11 @@ INSERT INTO Roles (name, description) VALUES
 ('Staff', 'Staff with access'),
 ('User', 'Regular user');
 
--- Dữ liệu mẫu cho Customers
-INSERT INTO Customers (name, email, phone, address, role_id) VALUES
-('Admin', 'nhp2901@gmail.com', '0976260335', 'Gò Vấp', 1),
-('User', 'phongnhps31815@fpt.edu.vn', '0976260335', 'HCM', 3),
-('Staff', 'xinchaofaf@gmail.com', '0976260335', 'HCM', 2);
+-- Dữ liệu mẫu cho Customers (cập nhật thêm ngày sinh)
+INSERT INTO Customers (name, email, phone, address, role_id, date_of_birth) VALUES
+('Admin', 'nhp2901@gmail.com', '0976260335', 'Gò Vấp', 1, '1990-01-01'),
+('User', 'phongnhps31815@fpt.edu.vn', '0976260335', 'HCM', 3, '2000-05-15'),
+('Staff', 'xinchaofaf@gmail.com', '0976260335', 'HCM', 2, '1995-03-22');
 
 -- Dữ liệu mẫu cho Movies
 INSERT INTO Movies (title, language, release_date, description, duration, image, director, cast, age_rating, release_country, trailer_url) VALUES
@@ -212,7 +213,6 @@ INSERT INTO Payments (payment_method, amount, status, booking_id, created_at, up
 VALUES
 ('Credit Card', 10.00, 'Successful', 1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 ('PayPal', 12.50, 'Pending', 2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
-
 
 -- Dữ liệu mẫu cho MovieReviews
 INSERT INTO Movie_Reviews (rating, comment, movie_id, customer_id) VALUES

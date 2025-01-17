@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { Navbar, Nav, Form, FormControl, Button, Container, 
          Collapse, NavDropdown, Offcanvas, Image } from 'react-bootstrap';
@@ -29,7 +29,7 @@ const CinemaHeader: React.FC = () => {
             <Navbar key={expand} expand={expand} className=" mb-3 header"
             >
             <Container fluid>
-                <Image src={logo} className=' mx-2 logo' title='Cinema'  alt="logo" roundedCircle />                
+                <Link to="/"><Image src={logo} className=' mx-2 logo' title='Cinema'  alt="logo" roundedCircle />  </Link>              
                 <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} className='bg-white text-white'/>
                 <Navbar.Offcanvas
                     id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end"
@@ -45,11 +45,11 @@ const CinemaHeader: React.FC = () => {
                 <Offcanvas.Body>
                     <Nav className="justify-content-center d-flex mx-auto text-center flex-grow-1 pe-3">
                         <Nav.Link href="/movie" className='px-3 '><strong>Phim</strong></Nav.Link>
-                        <Nav.Link href="#action2" className='px-3'><strong>Rạp/Giá vé</strong></Nav.Link>
-                        <Nav.Link href="#action2" className='px-3'><strong>Lịch chiếu</strong></Nav.Link>
-                        <Nav.Link href="#action2" className='px-3'><strong>Sự kiện/Tin tức</strong></Nav.Link>
-                        <Nav.Link href="#action2" className='px-3'><strong>Giới thiệu</strong></Nav.Link>
-                        <Nav.Link href="#action2" className='px-3'><strong>Liên hệ</strong></Nav.Link>
+                        <Nav.Link href="/theater" className='px-3'><strong>Rạp/Giá vé</strong></Nav.Link>
+                        <Nav.Link href="/booking" className='px-3'><strong>Lịch chiếu</strong></Nav.Link>
+                        <Nav.Link href="/new" className='px-3'><strong>Sự kiện/Tin tức</strong></Nav.Link>
+                        <Nav.Link href="/about" className='px-3'><strong>Giới thiệu</strong></Nav.Link>
+                        <Nav.Link href="/contact" className='px-3'><strong>Liên hệ</strong></Nav.Link>
                         <NavDropdown
                             title={
                                 <>

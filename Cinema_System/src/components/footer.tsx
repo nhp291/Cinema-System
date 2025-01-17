@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button, Form, Nav } from 'react-bootstrap';
 import { FaFacebookF, FaTwitter, FaGoogle, FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa';
 
-const Footer: React.FC = () => {
+const CinemaFooter: React.FC = () => {
   return (
     <footer className=' text-white'
     style={{backgroundColor:'#1b2735'}}
@@ -122,4 +122,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer;
+export default CinemaFooter;
