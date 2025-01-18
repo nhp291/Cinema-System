@@ -1,0 +1,169 @@
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.carousel-section {
+    position: relative;
+
+    .carousel {
+        border-radius: 10px;
+        overflow: hidden;
+
+        .carousel-item {
+            img {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+                max-height: 500px;
+
+                @media (max-width: 768px) {
+                    max-height: 300px; // Giảm chiều cao ảnh cho màn hình nhỏ hơn
+                }
+            }
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            right: 10%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+
+            h3 {
+                font-size: 1.8rem;
+                margin-bottom: 10px;
+
+                @media (max-width: 768px) {
+                    font-size: 1.5rem; // Font nhỏ hơn trên điện thoại
+                }
+                @media (max-width: 480px) {
+                    font-size: 1.2rem; // Font rất nhỏ trên màn hình nhỏ nhất
+                }
+            }
+
+            p {
+                font-size: 1.2rem;
+
+                @media (max-width: 768px) {
+                    font-size: 1rem; // Font nhỏ hơn trên điện thoại
+                }
+                @media (max-width: 480px) {
+                    font-size: 0.9rem; // Font rất nhỏ trên màn hình nhỏ nhất
+                }
+            }
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 10px;
+
+            li {
+                background-color: #fff;
+                opacity: 0.7;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) { // Tablet và màn hình nhỏ hơn
+    .container {
+        padding: 15px;
+    }
+
+    .carousel-caption {
+        bottom: 15%; // Điều chỉnh vị trí caption trên tablet
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) { // Điện thoại lớn
+    .container {
+        padding: 10px;
+    }
+
+    .carousel-caption {
+        bottom: 10%; // Điều chỉnh caption cho điện thoại
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) { // Điện thoại nhỏ
+    .carousel-caption {
+        bottom: 5%;
+        padding: 10px;
+        h3 {
+            font-size: 1rem;
+        }
+        p {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+// .cinema-card {
+//     background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+//     border-radius: 15px;
+//     overflow: hidden;
+//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+//     transition: transform 0.2s;
+//     animation: fadeInUp 0.5s ease-in-out;
+//     font-family: 'Roboto', sans-serif;
+  
+//     &:hover {
+//       transform: scale(1.05);
+//     }
+  
+//     .card-img-top {
+//       height: 200px;
+//       object-fit: cover;
+//       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+//     }
+  
+//     .card-body {
+//       text-align: center;
+  
+//       .card-title {
+//         font-size: 1.5rem;
+//         font-weight: bold;
+//       }
+  
+//       .card-text {
+//         font-size: 1rem;
+//         color: #6c757d;
+//       }
+  
+//       .btn-primary {
+//         background-color: #007bff;
+//         border: none;
+//         transition: background-color 0.3s, transform 0.3s;
+  
+//         &:hover {
+//           background-color: #0056b3;
+//           transform: scale(1.1);
+//         }
+//       }
+//     }
+//   }
+  
+//   @keyframes fadeInUp {
+//     from {
+//       opacity: 0;
+//       transform: translateY(20px);
+//     }
+//     to {
+//       opacity: 0;
+//       transform: translateY(0);
+//     }
+//   }
