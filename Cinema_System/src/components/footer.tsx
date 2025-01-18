@@ -7,7 +7,7 @@ const CinemaFooter: React.FC = () => {
     <footer className=' text-white'
     style={{backgroundColor:'#1b2735'}}
     >
-      <Container className='p-4'>
+      <Container className='p-4  text-center'>
         {/* Social Media Section */}
         <section className='mb-4 text-center'>
           <Button variant="outline-light" className='m-1' href='https://www.facebook.com/phong.hoai.523029/' role='button'>
