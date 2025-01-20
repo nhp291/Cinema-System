@@ -1,4 +1,3 @@
-
 .container {
     max-width: 100%;
     margin: 0 auto;
@@ -20,42 +19,7 @@
                 max-height: 500px;
 
                 @media (max-width: 768px) {
-                    max-height: 300px; // Giảm chiều cao ảnh cho màn hình nhỏ hơn
-                }
-            }
-        }
-
-        .carousel-caption {
-            position: absolute;
-            bottom: 20%;
-            left: 10%;
-            right: 10%;
-            background: rgba(0, 0, 0, 0.6);
-            color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-
-            h3 {
-                font-size: 1.8rem;
-                margin-bottom: 10px;
-
-                @media (max-width: 768px) {
-                    font-size: 1.5rem; // Font nhỏ hơn trên điện thoại
-                }
-                @media (max-width: 480px) {
-                    font-size: 1.2rem; // Font rất nhỏ trên màn hình nhỏ nhất
-                }
-            }
-
-            p {
-                font-size: 1.2rem;
-
-                @media (max-width: 768px) {
-                    font-size: 1rem; // Font nhỏ hơn trên điện thoại
-                }
-                @media (max-width: 480px) {
-                    font-size: 0.9rem; // Font rất nhỏ trên màn hình nhỏ nhất
+                    max-height: 200px;
                 }
             }
         }
@@ -75,95 +39,256 @@
         }
     }
 }
-
-/* Responsive adjustments */
-@media (max-width: 992px) { // Tablet và màn hình nhỏ hơn
-    .container {
-        padding: 15px;
+.title-section {
+    text-align: center; // Căn giữa nội dung
+    font-size: 2rem; // Kích thước chữ lớn hơn để nổi bật
+    font-weight: bold; // Chữ đậm
+    color: #ffff; // Màu chữ (có thể thay đổi theo giao diện của bạn)
+    text-transform: uppercase; // Chuyển thành chữ in hoa
+    letter-spacing: 2px; // Tạo khoảng cách giữa các chữ cái
+    margin: 20px 0; // Tạo khoảng cách trên và dưới
+  
+    // Hiệu ứng viền dưới chữ
+    &::after {
+      content: '';
+      display: block;
+      width: 50%; // Độ dài đường kẻ
+      height: 4px; // Độ dày đường kẻ
+      background-color: #1b2735; // Màu sắc của đường kẻ
+      margin: 10px auto 0; // Căn giữa và tạo khoảng cách
+      border-radius: 2px; // Làm cong đường kẻ
     }
-
-    .carousel-caption {
-        bottom: 15%; // Điều chỉnh vị trí caption trên tablet
-        padding: 15px;
-    }
-}
-
-@media (max-width: 768px) { // Điện thoại lớn
-    .container {
-        padding: 10px;
-    }
-
-    .carousel-caption {
-        bottom: 10%; // Điều chỉnh caption cho điện thoại
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) { // Điện thoại nhỏ
-    .carousel-caption {
-        bottom: 5%;
-        padding: 10px;
-        h3 {
-            font-size: 1rem;
+  
+    &:hover {
+        // Hiệu ứng gradient cho chữ
+        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      
+        &::after {
+          background: linear-gradient(135deg, #f6d365 0%, #fda085 100%); // Gradient khi hover cho đường kẻ
+          width: 80%; // Tăng độ dài đường kẻ khi hover
+          transition: all 0.3s ease-in-out; // Hiệu ứng chuyển động
         }
-        p {
-            font-size: 0.8rem;
+      }          
+  }
+.movies-section{
+      .cinema-card {
+        position: relative;
+        background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out;
+        animation: fadeInUp 0.5s ease-in-out;
+        font-family: 'Roboto', sans-serif;
+    
+        &:hover {
+            transform: scale(1.05);
+        }
+    
+        .card-img-top {
+            height: 350px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        .card-body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+    
+            .card-title {
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-bottom: 10px;
+    
+                @media (max-width: 768px) {
+                    margin-top: 10px;
+                }
+            }
+    
+            .card-text {
+                font-size: 1rem;
+                color: #fff;
+                margin-bottom: 15px;
+            }
+    
+            .btn-primary {
+                background-color: #007bff;
+                border: none;
+                padding: 3px 1px;
+                border-radius: 10px;
+                font-size: 1rem;
+                margin-top: 40px;
+                width: 100px;
+                margin-left: 30%;
+                transition: background 0.3s, transform 0.3s;
+                margin-bottom: 5px;
+                @media (max-width: 768px) {
+                    width: 100%;
+                    margin-left: 0;
+                    margin-top: 0px;
+                }
+            
+                &:hover {
+                    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+                    transform: scale(1.2);
+                }
+            }        
+    
+            .btn-details {
+                background-color: #28a745;
+                margin-top: 100px;
+                width: 100px;
+                border: none;
+                padding: 3px 1px;
+                border-radius: 10px;
+                font-size: 1rem;
+                @media (max-width: 768px) {
+                    width: 50px;
+                    height: 50px;
+                    margin-top: 35px;
+                }
+    
+                &:hover {
+                    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+                    transform: scale(1.2);
+                }
+            }
+    
+            .btn-book {
+                background-color: #ffc107;
+                margin-top: -30px;
+                margin-left: 55%;
+                width: 100px;
+                border: none;
+                padding: 3px 1px;
+                border-radius: 10px;
+                font-size: 1rem;
+                
+                @media (max-width: 768px) {
+                    width: 50px;
+                    height: 50px;
+                    margin-left: 80px;
+                    margin-top: -50px;
+                }
+                &:hover {
+                    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+                    transform: scale(1.2);
+                }
+            }
+        }
+    
+        &:hover .card-body {
+            opacity: 1;
+            visibility: visible;
         }
     }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .button-XT{
+      padding: 10px 20px;
+      font-size: 1rem;
+      width: 150px;
+      font-weight: bold;
+      border: none; // Xóa viền
+      border-radius: 8px; // Bo góc nút
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Đổ bóng nhẹ
+      cursor: pointer; // Hiển thị kiểu con trỏ nút
+      transition: all 0.3s ease-in-out; // Hiệu ứng chuyển động mượt mà
+    
+      &:hover {
+        background: linear-gradient(135deg, #fda085 0%, #f6d365 100%); // Đổi hướng gradient khi hover
+        transform: scale(1.05); // Phóng to nhẹ nút khi hover
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); // Đổ bóng rõ hơn
+      }
+    
+      &:active {
+        transform: scale(0.95); // Thu nhỏ nhẹ khi bấm
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Đổ bóng khi nhấn
+      }
+    }     
 }
-
-// .cinema-card {
-//     background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-//     border-radius: 15px;
-//     overflow: hidden;
-//     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-//     transition: transform 0.2s;
-//     animation: fadeInUp 0.5s ease-in-out;
-//     font-family: 'Roboto', sans-serif;
-  
-//     &:hover {
-//       transform: scale(1.05);
-//     }
-  
-//     .card-img-top {
-//       height: 200px;
-//       object-fit: cover;
-//       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-//     }
-  
-//     .card-body {
-//       text-align: center;
-  
-//       .card-title {
-//         font-size: 1.5rem;
-//         font-weight: bold;
-//       }
-  
-//       .card-text {
-//         font-size: 1rem;
-//         color: #6c757d;
-//       }
-  
-//       .btn-primary {
-//         background-color: #007bff;
-//         border: none;
-//         transition: background-color 0.3s, transform 0.3s;
-  
-//         &:hover {
-//           background-color: #0056b3;
-//           transform: scale(1.1);
-//         }
-//       }
-//     }
-//   }
-  
-//   @keyframes fadeInUp {
-//     from {
-//       opacity: 0;
-//       transform: translateY(20px);
-//     }
-//     to {
-//       opacity: 0;
-//       transform: translateY(0);
-//     }
-//   }
+.news-carousel {
+        .title-section {
+          font-size: 1.8rem;
+          color: #ffff;
+          text-transform: uppercase;
+          margin-bottom: 1rem;
+          font-weight: bold;
+        }
+      
+        .news-card {
+          width: 80%;
+          max-width: 500px;
+          max-height: 400px;
+          background: #fff;
+          border: none;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          transition: transform 0.3s ease-in-out;
+      
+          &:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+          }
+      
+          .card-img-top {
+            height: 250px;
+            object-fit: cover;
+          }
+      
+          .card-body {
+            padding: 20px;
+            text-align: center;
+      
+            .card-title {
+              font-size: 1.5rem;
+              color: #e64a19;
+              margin-bottom: 1rem;
+            }
+      
+            .card-text {
+              font-size: 1rem;
+              color: #555;
+              margin-bottom: 1rem;
+            }
+      
+            .btn-primary {
+              background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+              border: none;
+              padding: 10px 20px;
+              font-weight: bold;
+              border-radius: 5px;
+      
+              &:hover {
+                background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
+              }
+            }
+          }
+        }
+      }   

@@ -7,8 +7,7 @@ const CinemaFooter: React.FC = () => {
     <footer className=' text-white'
     style={{backgroundColor:'#1b2735'}}
     >
-      <Container className='p-4  text-center'>
-        {/* Social Media Section */}
+      <Container className='p-4  text-center mt-5'>
         <section className='mb-4 text-center'>
           <Button variant="outline-light" className='m-1' href='https://www.facebook.com/phong.hoai.523029/' role='button'>
             <FaFacebookF />
@@ -58,7 +57,7 @@ const CinemaFooter: React.FC = () => {
         {/* Footer Links Section */}
         <section>
           <Row>
-            <Col lg={3} md={6} className='mb-4'>
+            <Col lg={3} md={6} className='col-lg-3 col-md-4 col-sm-6 col-6 mb-4'>
               <h5 className='text-uppercase'>Hệ thống rạp</h5>
               <Nav className='flex-column'>
                 <Nav.Link href='#!' className='text-white'>
@@ -67,7 +66,7 @@ const CinemaFooter: React.FC = () => {
               </Nav>
             </Col>
 
-            <Col lg={3} md={6} className='mb-4'>
+            <Col lg={3} md={6} className='col-lg-3 col-md-4 col-sm-6 col-6 mb-4'>
               <h5 className='text-uppercase'>Xem Phim</h5>
               <Nav className='flex-column'>
                 <Nav.Link href='#!' className='text-white'>
@@ -82,7 +81,7 @@ const CinemaFooter: React.FC = () => {
               </Nav>
             </Col>
 
-            <Col lg={3} md={6} className='mb-4'>
+            <Col lg={3} md={6} className='col-lg-3 col-md-4 col-sm-6 col-6 mb-4'>
               <h5 className='text-uppercase'>CINEMA</h5>
               <Nav className='flex-column'>
                 <Nav.Link href='#!' className='text-white'>
@@ -97,7 +96,7 @@ const CinemaFooter: React.FC = () => {
               </Nav>
             </Col>
 
-            <Col lg={3} md={6} className='mb-4'>
+            <Col lg={3} md={6} className='col-lg-3 col-md-4 col-sm-6 col-6 mb-4'>
               <h5 className='text-uppercase'>Tài Khoản</h5>
               <Nav className='flex-column'>
                 <Nav.Link href='#!' className='text-white'>
