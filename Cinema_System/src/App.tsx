@@ -2,13 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import ExampleComponent from './components/ExampleComponent';
-import Movie from './pages/Movie';
-import MovieDetail from './pages/MovieDetail';
-import About from './pages/About';
-import Theater from './pages/Theater';
-import Contact from './pages/Contact';
-import News from './pages/News';
-import Booking from './pages/Booking';
+import Movie from './pages/user/Movie';
+import MovieDetail from './pages/user/MovieDetail';
+import About from './pages/user/About';
+import Theater from './pages/user/Theater';
+import Contact from './pages/user/Contact';
+import News from './pages/user/News';
+import Booking from './pages/user/Booking';
 
 
 const App: React.FC = () => {
