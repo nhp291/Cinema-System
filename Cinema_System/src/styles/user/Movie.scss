@@ -1,0 +1,58 @@
+.movie-container{
+
+  .filter {
+      select{
+      margin-top: 150px;
+      height: 40px;
+      margin-left: 10px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 14px;
+      cursor: pointer;
+
+      
+
+      option {
+        padding: 5px;
+        font-size: 14px;
+      }
+    }  
+    .genre-dropdown{
+      margin-left: 110px;
+    }
+  }
+}
+
+/* Tùy chỉnh Modal */
+.custom-modal .modal-content {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.custom-modal.show .modal-content {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.custom-modal .modal-header {
+  border-bottom: none;
+}
+
+
+.video-container iframe {
+  border-radius: 10px;  /* Bo góc iframe */
+  
+}
+
+/* Hiệu ứng hover cho video */
+.video-container iframe:hover {
+  transform: scale(1.1);  /* Phóng to khi hover */
+  transition: transform 0.3s ease;  /* Thêm hiệu ứng mượt mà */
+}
+
+/* Thêm hiệu ứng mờ (overlay) khi modal mở */
+.custom-modal .modal-backdrop {
+  opacity: 0.7;  /* Thêm độ mờ cho background */
+  background-color: #000;  /* Màu nền tối */
+}

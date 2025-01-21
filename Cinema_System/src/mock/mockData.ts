@@ -11,7 +11,7 @@ export const roles = [
   ];
   
 export const movies = [
-    { id: 1, title: 'Chạy ngay đi', language: 'Tiếng Thái', release_date: '2024-12-27', description: 'Kế hoạch “phông bạt” về chiếc khách sạn hạng sang…trong “sang chấn” của tên lừa đảo Nakrob nhanh chóng tan thành mây khói trong 1 nốt nhạc do “chủ cũ” không rủ cũng hiện về đòi quyền sở hữu đất. Bất ổn Thái Lan màn combat tơi bời hoa lá hẹ giữa hội sợ ma và vong hồn chủ cũ trong trận chiến tâm linh không thể đỉnh hơn với 1001 “chiêu thức” hài là chính nhưng hù thì dính nha!', duration: 104, image: 'https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/thumbnail/240x388/c88460ec71d04fa96e628a21494d2fd3/3/5/350x495-404.jpg', director: 'Pichaya Jarusboonpracha', cast: 'Chantavit Dhanasevi, Kanyawee Songmuang, Pittaya Saechua, Chukiat Eiamsook, Supatat Ophat', age_rating: '16+', release_country: 'ThaiLand', trailer_url: 'https://www.youtube.com/watch?v=bTJ-fHJopAI' },
+    { id: 1, title: 'Chạy ngay đi', language: 'Tiếng Thái', release_date: '2024-12-27', description: 'Kế hoạch “phông bạt” về chiếc khách sạn hạng sang…trong “sang chấn” của tên lừa đảo Nakrob nhanh chóng tan thành mây khói trong 1 nốt nhạc do “chủ cũ” không rủ cũng hiện về đòi quyền sở hữu đất. Bất ổn Thái Lan màn combat tơi bời hoa lá hẹ giữa hội sợ ma và vong hồn chủ cũ trong trận chiến tâm linh không thể đỉnh hơn với 1001 “chiêu thức” hài là chính nhưng hù thì dính nha!', duration: 104, image: 'https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/thumbnail/240x388/c88460ec71d04fa96e628a21494d2fd3/3/5/350x495-404.jpg', director: 'Pichaya Jarusboonpracha', cast: 'Chantavit Dhanasevi, Kanyawee Songmuang, Pittaya Saechua, Chukiat Eiamsook, Supatat Ophat', age_rating: '16+', release_country: 'ThaiLand', trailer_url: "https://www.youtube.com/watch?v=bTJ-fHJopAI" },
     { id: 2, title: 'LỜI THÌ THẦM CỦA TRÁI TIM', language: 'Japanese', release_date: '2025-01-10', description: 'Phát hành tại Nhật Bản vào ngày 15 tháng 7 năm 1995 Dựa trên manga của Hiiragi Aoi Sản xuất, viết kịch bản và dàn dựng bởi Miyazaki Hayao Đạo diễn bởi Kondo Yoshifumi Tsukishima Shizuku, một cô bé lớp 9 mê đọc sách, luôn bị cuốn hút bởi những câu chuyện trên từng trang giấy. Vào một ngày, cô phát hiện ra rằng hầu hết các cuốn sách cô mượn đều có tên một người đọc trước đó – Amasawa Seiji . Hóa ra, Seiji cũng chính là một học sinh cùng trường, với ước mơ trở thành một nghệ nhân làm đàn violin. Cậu ấy đã mơ ước rằng mình có thể học nghề làm đàn vĩ cầm tại Cremona, Ý sau khi tốt nghiệp cấp 2. Cuộc gặp gỡ với Seiji, một người có ước mơ lớn lao nhưng vẫn rất hiện thực đã thổi bùng ngọn lửa nhiệt huyết trong Shizuku, một cô bé vẫn đang loay hoay chưa biết mình muốn làm gì trong cuộc sống...', duration: 111, image: 'https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/thumbnail/240x388/c88460ec71d04fa96e628a21494d2fd3/w/h/whisper-of-the-heart---poster-01.jpg', director: 'Yoshifumi Kondô', cast: 'Yoko Honna, Issei Takahashi, Takashi Tachibana, ...', age_rating: '+-13', release_country: 'Japan', trailer_url: '' },
     { id: 3, title: 'LEMBAYUNG: OAN HỒN SẢN PHỤ', language: 'Indonesian', release_date: '2025-01-10', description: 'Arum và Pica, những người muốn hoàn thành kỳ thực tập tại bệnh viện Lembayung, đã phải đối mặt với nỗi khiếp sợ bí ẩn từ một người phụ nữ mà họ nghi ngờ đã treo cổ trong nhà tắm. Tình huống trở nên gay cấn hơn khi họ nhờ người khác giúp đỡ đến mức đe dọa cả tính mạng của chính mình và những người thân cận nhất.', duration: 123, image: 'https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/3/5/350x495lembayung.jpg', director: 'Baim Wong', cast: 'Taskya Namya; Yasamin Jasem; Arya Saloka', age_rating: '+18', release_country: 'Indonesia', trailer_url: 'https://www.youtube.com/watch?v=k2yDJBNbpAo' },
     { id: 4, title: 'CHỊ DÂU', language: 'VietNamese', release_date: '2024-12-20', description: 'Chuyện bắt đầu khi bà Nhị - con dâu cả của gia đình quyết định nhân dịp đám giỗ của mẹ chồng, tụ họp cả bốn chị em gái - con ruột trong nhà lại để thông báo chuyện sẽ tự bỏ tiền túi ra sửa sang căn nhà từ đường cũ kỹ trước khi bão về. Vấn đề này khiến cho nội bộ gia đình bắt đầu có những lục đục, chị dâu và các em chồng cũng xảy ra mâu thuẫn, bất hoà. Dần dà những sự thật đằng sau việc "bằng mặt mà không bằng lòng" giữa các chị em cũng dần được hé lộ, những bí mật, nỗi đau sâu thẳm nhất trong mỗi cá nhân cũng dần được bóc tách. Liệu sợi dây liên kết vốn đã mong manh giữa các chị em có bị cắt đứt và liệu “căn nhà” vốn đã dột nát ấy có còn nguyên vẹn sau cơn bão lớn?', duration: 100, image: 'https://iguov8nhvyobj.vcdn.cloud/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/9/_/9._cd_-_main_poster_-_cinemasize.jpg', director: 'Khương Ngọc', cast: 'Việt Hương, Hồng Đào, Lê Khánh, Đinh Y Nhung, Ngọc Trinh', age_rating: '+16', release_country: 'Viet Nam', trailer_url: 'https://www.youtube.com/watch?v=XU4oplOtoQo' },
@@ -24,10 +24,35 @@ export const movies = [
   ];  
   
   export const genres = [
-    { id: 1, name: 'Action' },
-    { id: 2, name: 'Romance' },
-    { id: 3, name: 'Comedy' }
+    { id: 1, name: 'Hành động' },
+    { id: 2, name: 'Tình cảm' },
+    { id: 3, name: 'Hài' },
+    { id: 4, name: 'Kinh dị' },
+    { id: 5, name: 'Phiêu lưu' },
+    { id: 6, name: 'Khoa học viễn tưởng' },
+    { id: 7, name: 'Tâm lý' },
+    { id: 8, name: 'Tội phạm' },
+    { id: 9, name: 'Lịch sử' },
+    { id: 10, name: 'Hoạt hình' },
+    { id: 11, name: 'Gia đình' },
+    { id: 12, name: 'Âm nhạc' },
+    { id: 13, name: 'Kinh dị hài' },
+    { id: 14, name: 'Tài liệu' },
+    { id: 15, name: 'Thần thoại' }
   ];
+  
+  export const movieGenres = [
+    { id: 1, movie_id: 1, genre_id: 3 },
+    { id: 2, movie_id: 2, genre_id: 2 },
+    { id: 3, movie_id: 3, genre_id: 4 },
+    { id: 4, movie_id: 4, genre_id: 7 },
+    { id: 5, movie_id: 5, genre_id: 1 },
+    { id: 6, movie_id: 6, genre_id: 10 },
+    { id: 7, movie_id: 7, genre_id: 1 },
+    { id: 8, movie_id: 8, genre_id: 11 },
+    { id: 9, movie_id: 9, genre_id: 8 },
+    { id: 10, movie_id: 10, genre_id: 10 },
+];
   
   export const theaters = [
     { id: 1, name: 'Central Cinema', address: '789 Pine St', capacity: 200 },
@@ -72,11 +97,6 @@ export const movies = [
   export const customerHistory = [
     { id: 1, timestamp: '2025-01-01 09:00:00', action: 'Booking movie ticket', customer_id: 1, movie_id: 1 },
     { id: 2, timestamp: '2025-01-02 14:00:00', action: 'Watched movie', customer_id: 2, movie_id: 2 }
-  ];
-  
-  export const movieGenres = [
-    { id: 1, movie_id: 1, genre_id: 1 }, // 'The Great Adventure' - 'Action'
-    { id: 2, movie_id: 2, genre_id: 2 }  // 'Romantic Escape' - 'Romance'
   ];
   
   export const customerAuth = [

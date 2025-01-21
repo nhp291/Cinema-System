@@ -1,0 +1,118 @@
+/* CinemaIntro.scss */
+
+/* Toàn bộ phần giới thiệu Cinema */
+.cinema-intro {
+    background-color: #f4f4f9;
+    padding: 60px 0;
+    color: #333;
+  }
+  
+  /* Phần tiêu đề và mô tả */
+  .intro-container {
+    margin-bottom: 60px;
+  }
+  
+  .cinema-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+  }
+  
+  .cinema-description {
+    font-size: 1.4rem;
+    color: #777;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Phim nổi bật */
+  .featured-movies {
+    margin-bottom: 60px;
+  
+    .movie-card {
+      margin-bottom: 30px;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+  
+      img {
+        border-radius: 10px;
+        object-fit: cover;
+        height: 350px;
+        width: 100%;
+      }
+  
+      .card-body {
+        text-align: center;
+        padding: 20px;
+      }
+  
+      .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 15px;
+      }
+  
+      .card-text {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 20px;
+      }
+  
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        border-radius: 5px;
+  
+        &:hover {
+          background-color: #0056b3;
+          border-color: #0056b3;
+        }
+      }
+    }
+  }
+  
+  /* Thông tin về cinema */
+  .cinema-info {
+    background-color: #222;
+    color: #fff;
+    padding: 50px 0;
+    font-size: 1.1rem;
+  
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+  
+    p {
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+  
+    ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+  
+    ul li {
+      margin-bottom: 10px;
+    }
+  }
+  
