@@ -1,10 +1,13 @@
+# General
 HELP.md
+
+# Maven target directory
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
+### STS (Spring Tool Suite) ###
 .apt_generated
 .classpath
 .factorypath
@@ -31,3 +34,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Node.js and npm
+node_modules/
+*.pack
+Cinema_System/node_modules/.cache/
