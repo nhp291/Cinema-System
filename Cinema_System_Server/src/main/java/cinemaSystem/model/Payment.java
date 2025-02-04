@@ -1,13 +1,12 @@
 package cinemaSystem.model;
 
 import jakarta.persistence.*;
-import jdk.jfr.Enabled;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.security.PrivateKey;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Payments")
@@ -15,6 +14,7 @@ import java.security.PrivateKey;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Payment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -32,6 +32,23 @@ public class Payment {
     @ManyToOne
     @JoinColumn(name = "booking_id", nullable = false)
     private Booking booking;
+
+    @Column(name = "created_at", nullable = false, updatable = false)
+    private LocalDateTime createdAt = LocalDateTime.now();
+
+    @Column(name = "updated_at", nullable = false)
+    private LocalDateTime updatedAt = LocalDateTime.now();
+
+    @PrePersist
+    public void prePersist() {
+        createdAt = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        updatedAt = LocalDateTime.now();
+    }
 
     public enum PaymentMethod {
         CREDIT_CARD, PAYPAL, CASH

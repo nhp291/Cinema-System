@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="f26bf40f-71f7-41af-a81e-79b64e8bb8d2" name="Shynh_Spa.sqlite Mapping">
+      <data-sources db="e08393db-9833-4e7b-99fe-e7517a7622a4" />
+      <scope>
+        <node kind="database" negative="1" />
+      </scope>
+    </mapping>
+  </component>
+</project>
