@@ -32,7 +32,7 @@ cinema-system-frontend
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/nhp291/cinema-system-backend.git
    cd cinema-system-frontend
    ```
 
@@ -106,6 +106,6 @@ Before getting started, ensure you have the following tools installed:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/cinema-system-backend.git
+   git clone https://github.com/nhp291/cinema-system-backend.git
    cd cinema-system-backend
    ```
