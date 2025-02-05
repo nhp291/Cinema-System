@@ -32,8 +32,8 @@ cinema-system-frontend
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/nhp291/cinema-system-backend.git
-   cd cinema-system-frontend
+   git clone https://github.com/nhp291/Cinema-System/Cinema_System.git
+   cd Cinema_System
    ```
 
 2. **Install dependencies:**
@@ -106,6 +106,6 @@ Before getting started, ensure you have the following tools installed:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/nhp291/cinema-system-backend.git
+   git clone https://github.com/nhp291/Cinema-System/Cinema_System_Server.git
    cd cinema-system-backend
    ```
