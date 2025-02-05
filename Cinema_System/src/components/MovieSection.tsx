@@ -34,13 +34,13 @@ const MovieSection: React.FC<MovieSectionProps> = ({
       embedUrl = `https://www.youtube.com/embed/${videoId}`;
     }
   
-    setCurrentTrailer(embedUrl); // Cập nhật URL nhúng
-    setShowModal(true); // Hiển thị modal
+    setCurrentTrailer(embedUrl);
+    setShowModal(true);
   };  
 
   const handleCloseModal = () => {
-    setShowModal(false); // Đóng modal
-    setCurrentTrailer(null); // Xóa URL video
+    setShowModal(false);
+    setCurrentTrailer(null);
   };
 
   return (

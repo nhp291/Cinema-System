@@ -54,6 +54,7 @@ const Movie: React.FC = () => {
             onChange={(e) => setGenreFilter(e.target.value)}
             className="genre-dropdown"
           >
+            <option value="">Thể loại</option>
             <option value="">Tất cả</option>
             {genreOptions.map((genre) => (
               <option key={genre.id} value={genre.id}>
@@ -68,6 +69,7 @@ const Movie: React.FC = () => {
             onChange={(e) => setDurationFilter(e.target.value)}
             className="duration-dropdown"
           >
+            <option value="">Thời gian</option>
             <option value="">Tất cả</option>
             <option value="< 90">&lt; 90 Phút</option>
             <option value="90 - 120">90 - 120 Phút</option>

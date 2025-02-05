@@ -135,47 +135,37 @@ const HomePage: React.FC = () => {
                 </section>
 
                 <section className="news-carousel mt-5 me-3">
-                    <h4 className="text-center title-section mb-4"><strong>TIN TỨC</strong></h4>
-                    <Carousel indicators={true} interval={1000} pause="hover" slide>
+                    <h4 className="text-center title-section mb-4">
+                        <strong>TIN TỨC</strong>
+                    </h4>
+                    <Carousel indicators interval={3000} pause="hover" slide>
                         {news.map((item, index) => (
-                            index % 1 === 0 ? (
-                                <Carousel.Item key={index}>
-                                    <div className="carousel-item-content d-flex justify-content-between">
-                                        <div className="card news-card">
-                                            <img
-                                                className="card-img-top"
-                                                src={item.image_url}
-                                                alt={item.title}
-                                            />
-                                            <div className="card-body">
-                                                <h5 className="card-title">
-                                                    {truncateText(item.title, 30)}
-                                                </h5>
-                                                <a href="" className="btn btn-primary">Đọc thêm</a>
-                                            </div>
-                                        </div>
+                            <Carousel.Item key={index}>
+                            <div className="carousel-item-content d-flex justify-content-center align-items-center">
+                                <div className="card news-card">
+                                <img className="card-img-top" src={item.image_url} alt={item.title} />
+                                <div className="card-body">
+                                    <h5 className="card-title">{truncateText(item.title, 40)}</h5>
+                                    <a href={item.image_url} className="btn btn-primary">Đọc thêm</a>
+                                </div>
+                                </div>
 
-                                        {news[index + 1] && (
-                                            <div className="card news-card">
-                                                <img
-                                                    className="card-img-top"
-                                                    src={news[index + 1]?.image_url}
-                                                    alt={news[index + 1]?.title}
-                                                />
-                                                <div className="card-body">
-                                                    <h5 className="card-title">
-                                                        {truncateText(news[index + 1]?.title ?? '', 30)}
-                                                    </h5>
-                                                    <a href="" className="btn btn-primary">Đọc thêm</a>
-                                                </div>
-                                            </div>
-                                        )}
+                                {/* Chỉ hiển thị card thứ 2 nếu màn hình lớn hơn 768px */}
+                                {window.innerWidth > 768 && news[index + 1] && (
+                                <div className="card news-card">
+                                    <img className="card-img-top" src={news[index + 1].image_url} alt={news[index + 1].title} />
+                                    <div className="card-body">
+                                    <h5 className="card-title">{truncateText(news[index + 1].title, 40)}</h5>
+                                    <a href={news[index + 1].image_url} className="btn btn-primary">Đọc thêm</a>
                                     </div>
-                                </Carousel.Item>
-                            ) : null
+                                </div>
+                                )}
+                            </div>
+                            </Carousel.Item>
                         ))}
                     </Carousel>
                 </section>
+
             </div>
         </Layout>
     );
