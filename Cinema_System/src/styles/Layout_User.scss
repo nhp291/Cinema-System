@@ -68,6 +68,15 @@
         &:hover {
             color: gold;
         }
+
+        &.active {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            display: inline-block; 
+            color: transparent !important;
+        }
     }
 
     .dropdown-item {

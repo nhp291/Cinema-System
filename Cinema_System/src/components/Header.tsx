@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { Navbar, Nav, Form, Button, Container, NavDropdown, Offcanvas, Image } from 'react-bootstrap';
-// import '../style/user/Header.scss';
-// import '../style/user/Layout.scss';
 import { FaUserCircle } from 'react-icons/fa';
 
 const CinemaHeader: React.FC = () => {
@@ -19,7 +17,6 @@ const CinemaHeader: React.FC = () => {
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault();
         console.log('Searching for:', searchQuery);
-        // Add search logic here (e.g., API call or navigation)
     };
 
     // Active link
@@ -51,24 +48,24 @@ const CinemaHeader: React.FC = () => {
                     </Offcanvas.Header>
                     <Offcanvas.Body>
                         <Nav className="justify-content-center d-flex mx-auto text-center flex-grow-1 pe-3">
-                            <Nav.Link href="/movie" className={`px-3 ${isActive('/movie') ? 'active' : ''}`}>
+                            <Link to="/movie" className={`nav-link px-3 ${isActive('/movie') ? 'active' : ''}`}>
                                 <strong>Phim</strong>
-                            </Nav.Link>
-                            <Nav.Link href="/theater" className={`px-3 ${isActive('/theater') ? 'active' : ''}`}>
+                            </Link>
+                            <Link to="/theater" className={`nav-link px-3 ${isActive('/theater') ? 'active' : ''}`}>
                                 <strong>Rạp/Giá vé</strong>
-                            </Nav.Link>
-                            <Nav.Link href="/booking" className={`px-3 ${isActive('/booking') ? 'active' : ''}`}>
+                            </Link>
+                            <Link to="/booking" className={`nav-link px-3 ${isActive('/booking') ? 'active' : ''}`}>
                                 <strong>Lịch chiếu</strong>
-                            </Nav.Link>
-                            <Nav.Link href="/new" className={`px-3 ${isActive('/new') ? 'active' : ''}`}>
+                            </Link>
+                            <Link to="/new" className={`nav-link px-3 ${isActive('/new') ? 'active' : ''}`}>
                                 <strong>Sự kiện/Tin tức</strong>
-                            </Nav.Link>
-                            <Nav.Link href="/about" className={`px-3 ${isActive('/about') ? 'active' : ''}`}>
+                            </Link>
+                            <Link to="/about" className={`nav-link px-3 ${isActive('/about') ? 'active' : ''}`}>
                                 <strong>Giới thiệu</strong>
-                            </Nav.Link>
-                            <Nav.Link href="/contact" className={`px-3 ${isActive('/contact') ? 'active' : ''}`}>
+                            </Link>
+                            <Link to="/contact" className={`nav-link px-3 ${isActive('/contact') ? 'active' : ''}`}>
                                 <strong>Liên hệ</strong>
-                            </Nav.Link>
+                            </Link>
                             <NavDropdown
                                 title={<FaUserCircle size={25} className="text-white" />}
                                 id={`offcanvasNavbarDropdown-expand-${expand}`}
