@@ -9,6 +9,7 @@ import Theater from './pages/user/Theater';
 import Contact from './pages/user/Contact';
 import News from './pages/user/News';
 import Booking from './pages/user/Booking';
+import TooltipTheater from './components/TooltipTheater';
 
 
 const App: React.FC = () => {
@@ -25,6 +26,7 @@ const App: React.FC = () => {
           <Route path="/contact" component={Contact} />
           <Route path="/new" component={News} />
           <Route path="/booking" component={Booking} />
+          <Route path="/TooltipTheater" component={TooltipTheater} />
         </Switch>
       </div>
     </Router>

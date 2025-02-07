@@ -54,11 +54,30 @@ export const movies = [
     { id: 10, movie_id: 10, genre_id: 10 },
 ];
   
-  export const theaters = [
-    { id: 1, name: 'Central Cinema', address: '789 Pine St', capacity: 200 },
-    { id: 2, name: 'Downtown Theater', address: '101 Maple Ave', capacity: 150 }
-  ];
-  
+export const theaters = [
+  { id: 1, name: 'CGV Vincom Gò Vấp', address: 'Vincom Plaza Gò Vấp, HCM', phone: '028 3636 6060' },
+  { id: 2, name: 'Lotte Cinema Cộng Hòa', address: '243 Cộng Hòa, Tân Bình, HCM', phone: '028 3811 0001' },
+  { id: 3, name: 'Galaxy Nguyễn Du', address: '116 Nguyễn Du, Quận 1, HCM', phone: '028 3925 1580' },
+  { id: 4, name: 'BHD Star Bitexco', address: 'Lầu 3, Bitexco Tower, Quận 1, HCM', phone: '028 6269 5555' },
+  { id: 5, name: 'Mega GS Cao Thắng', address: '19 Cao Thắng, Quận 3, HCM', phone: '028 7303 8881' },
+  { id: 6, name: 'CGV Aeon Tân Phú', address: '30 Bờ Bao Tân Thắng, Tân Phú, HCM', phone: '028 6280 5050' },
+  { id: 7, name: 'CGV Sư Vạn Hạnh', address: '718 Sư Vạn Hạnh, Quận 10, HCM', phone: '028 7100 1234' },
+  { id: 8, name: 'Lotte Cinema Nam Sài Gòn', address: '469 Nguyễn Hữu Thọ, Quận 7, HCM', phone: '028 3775 2524' },
+  { id: 9, name: 'Galaxy Kinh Dương Vương', address: '718 Kinh Dương Vương, Bình Tân, HCM', phone: '028 6260 5555' },
+  { id: 10, name: 'BHD Star Thảo Điền', address: 'Vincom Mega Mall Thảo Điền, Quận 2, HCM', phone: '028 3744 5555' },
+  { id: 11, name: 'CGV Hùng Vương Plaza', address: '126 Hùng Vương, Quận 5, HCM', phone: '028 3838 8888' },
+  { id: 12, name: 'Lotte Cinema Gò Vấp', address: '242 Nguyễn Văn Lượng, Gò Vấp, HCM', phone: '028 6257 5252' },
+  { id: 13, name: 'Galaxy Tân Bình', address: '246 Nguyễn Hồng Đào, Tân Bình, HCM', phone: '028 3948 0000' },
+  { id: 14, name: 'BHD Star Phạm Hùng', address: 'Lotte Mart Phạm Hùng, Quận 8, HCM', phone: '028 3758 5555' },
+  { id: 15, name: 'CGV Pearl Plaza', address: '561A Điện Biên Phủ, Bình Thạnh, HCM', phone: '028 3514 9999' },
+  { id: 16, name: 'Lotte Cinema Thủ Đức', address: '936 QL 1A, Thủ Đức, HCM', phone: '028 3720 5050' },
+  { id: 17, name: 'Galaxy Quang Trung', address: 'Lầu 3, Co.opmart Quang Trung, Gò Vấp, HCM', phone: '028 3987 9999' },
+  { id: 18, name: 'BHD Star 3/2', address: 'Vincom Plaza 3/2, Quận 10, HCM', phone: '028 6261 5555' },
+  { id: 19, name: 'CGV Crescent Mall', address: '101 Tôn Dật Tiên, Quận 7, HCM', phone: '028 5413 7373' },
+  { id: 20, name: 'Lotte Cinema Diamond Plaza', address: '34 Lê Duẩn, Quận 1, HCM', phone: '028 3822 3288' },
+  { id: 21, name: 'Mega GS Bình Thạnh', address: '222 Xô Viết Nghệ Tĩnh, Bình Thạnh, HCM', phone: '028 7303 9999' }
+];
+
   export const seats = [
     { id: 1, seat_number: 'A1', status: 'Available', theater_id: 1 },
     { id: 2, seat_number: 'A2', status: 'Available', theater_id: 1 },

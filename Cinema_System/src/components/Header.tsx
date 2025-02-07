@@ -3,6 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 import { Navbar, Nav, Form, Button, Container, NavDropdown, Offcanvas, Image } from 'react-bootstrap';
 import { FaUserCircle } from 'react-icons/fa';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+import CinemaTooltipTheater from './TooltipTheater';
+import { left } from '@popperjs/core';
 
 const CinemaHeader: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,6 +25,8 @@ const CinemaHeader: React.FC = () => {
 
     // Active link
     const isActive = (path: string) => location.pathname === path;
+
+    const [showTooltip, setShowTooltip] = useState(false);
 
     return (
         <Navbar expand={expand} className="mb-3 header custom-navbar">
@@ -51,11 +57,32 @@ const CinemaHeader: React.FC = () => {
                             <Link to="/movie" className={`nav-link px-3 ${isActive('/movie') ? 'active' : ''}`}>
                                 <strong>Phim</strong>
                             </Link>
-                            <Link to="/theater" className={`nav-link px-3 ${isActive('/theater') ? 'active' : ''}`}>
-                                <strong>Rạp/Giá vé</strong>
-                            </Link>
+                            <OverlayTrigger
+                                placement="bottom"
+                                show={showTooltip}
+                                overlay={
+                                    <Tooltip id="tooltip-theater">
+                                        <div
+                                            onMouseEnter={() => setShowTooltip(true)}
+                                            onMouseLeave={() => setShowTooltip(false)}
+                                        >
+                                            {/* Truyền setShowTooltip vào component */}
+                                            <CinemaTooltipTheater setShowTooltip={setShowTooltip} />
+                                        </div>
+                                    </Tooltip>
+                                }
+                            >
+                                <Link
+                                    to="/"
+                                    className="nav-link px-3"
+                                    onMouseEnter={() => setShowTooltip(true)}
+                                    onMouseLeave={() => setShowTooltip(false)}
+                                >
+                                    <strong>Rạp</strong>
+                                </Link>
+                            </OverlayTrigger>
                             <Link to="/booking" className={`nav-link px-3 ${isActive('/booking') ? 'active' : ''}`}>
-                                <strong>Lịch chiếu</strong>
+                                <strong>Lịch chiếu/Giá vé</strong>
                             </Link>
                             <Link to="/new" className={`nav-link px-3 ${isActive('/new') ? 'active' : ''}`}>
                                 <strong>Sự kiện/Tin tức</strong>
