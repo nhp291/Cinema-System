@@ -10,7 +10,8 @@ import Contact from './pages/user/Contact';
 import News from './pages/user/News';
 import Booking from './pages/user/Booking';
 import TooltipTheater from './components/TooltipTheater';
-
+// import { seats } from './mock/mockData';
+import SeatSelection from "./components/seats";
 
 const App: React.FC = () => {
   return (
@@ -27,6 +28,7 @@ const App: React.FC = () => {
           <Route path="/new" component={News} />
           <Route path="/booking" component={Booking} />
           <Route path="/TooltipTheater" component={TooltipTheater} />
+          <Route path="/chon-ghe" component={SeatSelection} />
         </Switch>
       </div>
     </Router>
