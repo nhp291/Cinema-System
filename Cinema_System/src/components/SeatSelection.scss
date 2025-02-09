@@ -1,0 +1,104 @@
+$seat-size: 50px;
+$seat-border-radius: 8px;
+$glow-vip: 0px 0px 12px 3px rgba(255, 215, 0, 1);
+$glow-couple: 0px 0px 12px 3px rgba(255, 105, 180, 1);
+$transition: all 0.3s ease-in-out;
+
+// Màn hình rạp
+.screen {
+  width: 85%;
+  height: 60px;
+  background: linear-gradient(to bottom, #777, #bbb);
+  border-radius: 30px 30px 0 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 60px;
+  color: black;
+  margin: 20px auto;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+  text-transform: uppercase;
+}
+
+// Sơ đồ ghế
+.seat-container {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+// Ghế
+.seat-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $seat-size;
+  height: $seat-size;
+  border-radius: $seat-border-radius;
+  border: none;
+  transition: $transition;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+  }
+}
+
+// Loại ghế
+.normal {
+  background-color: #a9a9a9;
+}
+
+.vip {
+  background-color: #ffd700;
+  box-shadow: $glow-vip;
+  svg {
+    color: #b8860b; // Màu vàng nâu cho icon ghế VIP
+  }
+}
+
+.couple {
+  background: linear-gradient(45deg, #ff69b4, #ff1493);
+  box-shadow: $glow-couple;
+  svg {
+    color: #ff1493; // Màu hồng đậm cho icon ghế Couple
+  }
+}
+
+.booked {
+  background-color: #8b0000; // Đỏ đậm để tránh bị xanh dương
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.selected {
+  background-color: #008000;
+}
+
+// Chú thích ghế
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+
+  .legend-item {
+    text-align: center;
+
+    svg {
+      font-size: 35px;
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+}
