@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Data
 @RestController
 @RequestMapping("/api/customers")
 public class CustomerController {
@@ -33,24 +32,24 @@ public class CustomerController {
     }
 
     @GetMapping("/email")
-    public Customer getCustomerByEmail(String email) {
+    public Customer getCustomerByEmail(@RequestParam String email) {
         return customerService.getCustomerByEmail(email);
     }
 
-    @PostMapping("/")
-    public Object createCustomer(@RequestBody Customer customer) {
-        System.out.println(customer.getEmail());
-        return ResponseEntity.ok(customer.getEmail());
-    }
+//    @PostMapping("/")
+//    public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
+//        Customer savedCustomer = customerService.saveCustomer(customer);
+//        return ResponseEntity.ok(savedCustomer);
+//    }
 
     @DeleteMapping("/{id}")
-    public void deleteCustomer(Long id) {
+    public void deleteCustomer(@PathVariable Long id) {
         customerService.deleteCustomer(id);
     }
 
-    @PutMapping("/{id}")
-    public Customer updateCustomer(Long id, Customer updatedCustomer) {
-        return customerService.updateCustomer(id, updatedCustomer);
-    }
+//    @PutMapping("/{id}")
+//    public Customer updateCustomer(@PathVariable Long id,@RequestBody Customer updatedCustomer) {
+//        return customerService.updateCustomer(id, updatedCustomer);
+//    }
 
 }

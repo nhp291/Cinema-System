@@ -31,16 +31,16 @@ public class PaymentService {
         paymentRepository.deleteById(id);
     }
 
-    public Payment updatePayment(Long id, Payment updatedPayment) {
-        Optional<Payment> existingPaymentOpt = paymentRepository.findById(id);
-        if (existingPaymentOpt.isPresent()) {
-            Payment payment = existingPaymentOpt.get();
-            payment.setAmount(updatedPayment.getAmount());
-            payment.setPaymentMethod(updatedPayment.getPaymentMethod());
-            payment.setStatus(updatedPayment.getStatus());
-            return paymentRepository.save(payment);
-        }
-        return null;
-    }
+//    public Payment updatePayment(Long id, Payment updatedPayment) {
+//        Optional<Payment> existingPaymentOpt = paymentRepository.findById(id);
+//        if (existingPaymentOpt.isPresent()) {
+//            Payment payment = existingPaymentOpt.get();
+//            payment.setAmount(updatedPayment.getAmount());
+//            payment.setPaymentMethod(updatedPayment.getPaymentMethod());
+//            payment.setStatus(updatedPayment.getStatus());
+//            return paymentRepository.save(payment);
+//        }
+//        return null;
+//    }
 
 }

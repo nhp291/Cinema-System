@@ -8,7 +8,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "Movies")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Movie {
