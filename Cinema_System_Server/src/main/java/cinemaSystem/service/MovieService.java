@@ -1,7 +1,7 @@
-package cinemaSystem.service;
+package cinemasystem.service;
 
-import cinemaSystem.model.Movie;
-import cinemaSystem.repository.MovieRepository;
+import cinemasystem.model.Movie;
+import cinemasystem.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

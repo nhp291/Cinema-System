@@ -1,7 +1,7 @@
-package cinemaSystem.service;
+package cinemasystem.service;
 
-import cinemaSystem.model.Booking;
-import cinemaSystem.repository.BookingRepository;
+import cinemasystem.model.Booking;
+import cinemasystem.repository.BookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

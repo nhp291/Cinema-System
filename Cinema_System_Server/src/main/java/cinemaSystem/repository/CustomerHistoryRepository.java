@@ -1,6 +1,6 @@
-package cinemaSystem.repository;
+package cinemasystem.repository;
 
-import cinemaSystem.model.CustomerHistory;
+import cinemasystem.model.CustomerHistory;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CustomerHistoryRepository extends JpaRepository<CustomerHistory, Long> {

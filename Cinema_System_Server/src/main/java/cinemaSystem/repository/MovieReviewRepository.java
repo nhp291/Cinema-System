@@ -1,6 +1,6 @@
-package cinemaSystem.repository;
+package cinemasystem.repository;
 
-import cinemaSystem.model.MovieReview;
+import cinemasystem.model.MovieReview;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MovieReviewRepository extends JpaRepository<MovieReview, Long> {

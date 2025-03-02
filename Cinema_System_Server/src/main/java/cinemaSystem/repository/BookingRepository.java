@@ -1,7 +1,6 @@
-package cinemaSystem.repository;
+package cinemasystem.repository;
 
-import cinemaSystem.model.Booking;
-import org.aspectj.apache.bcel.util.Repository;
+import cinemasystem.model.Booking;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BookingRepository extends JpaRepository<Booking, Long> {

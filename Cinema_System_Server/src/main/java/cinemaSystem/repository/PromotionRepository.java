@@ -1,6 +1,6 @@
-package cinemaSystem.repository;
+package cinemasystem.repository;
 
-import cinemaSystem.model.Promotion;
+import cinemasystem.model.Promotion;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PromotionRepository extends JpaRepository<Promotion, Long> {
