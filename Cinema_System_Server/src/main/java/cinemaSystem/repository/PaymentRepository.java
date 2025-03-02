@@ -1,6 +1,6 @@
-package cinemaSystem.repository;
+package cinemasystem.repository;
 
-import cinemaSystem.model.Payment;
+import cinemasystem.model.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PaymentRepository extends JpaRepository<Payment, Long> {

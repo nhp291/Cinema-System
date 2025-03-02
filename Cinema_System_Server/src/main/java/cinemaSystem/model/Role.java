@@ -1,5 +1,6 @@
-package cinemaSystem.model;
+package cinemasystem.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,6 +24,7 @@ public class Role {
     private String description;
 
     @OneToMany(mappedBy = "role")
-    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @JsonIgnore
+//    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private List<Customer> customers;
 }

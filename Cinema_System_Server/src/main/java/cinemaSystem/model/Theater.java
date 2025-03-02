@@ -1,4 +1,4 @@
-package cinemaSystem.model;
+package cinemasystem.model;
 
 import jakarta.persistence.*;
 import lombok.*;

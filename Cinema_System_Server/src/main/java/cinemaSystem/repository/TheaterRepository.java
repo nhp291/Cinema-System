@@ -1,6 +1,6 @@
-package cinemaSystem.repository;
+package cinemasystem.repository;
 
-import cinemaSystem.model.Theater;
+import cinemasystem.model.Theater;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TheaterRepository extends JpaRepository<Theater, Long> {
