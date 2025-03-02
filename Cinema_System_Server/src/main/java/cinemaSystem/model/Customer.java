@@ -15,7 +15,7 @@ import java.util.Objects;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString(exclude = "role") // Tránh vòng lặp vô hạn
+@ToString(exclude = "role")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
