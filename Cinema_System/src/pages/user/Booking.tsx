@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Layout from "../../containers/Layout_User";
 import { Button, Container, Row, Col, Card } from "react-bootstrap";
-import "./CinemaBooking.css";
+import "../../styles/user/Booking.scss";
 
 const CinemaBooking: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<string>("");

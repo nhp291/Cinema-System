@@ -58,7 +58,7 @@ const HomePage: React.FC = () => {
 
                 <section className="movies-section mt-5">
                     <h4 className="text-center title-section"><strong>PHIM ĐANG CHIẾU</strong></h4>
-                    <div className="row mt-3">
+                    <div className="row mt-3 col-9 justify-content-center mx-auto">
                         {movies
                             .filter(movie => {
                                 // Lọc phim có release_date từ thời điểm hiện tại trở về trước
@@ -67,14 +67,12 @@ const HomePage: React.FC = () => {
                             })
                             .slice(0, 8) // Giới hạn hiển thị 8 phim
                             .map(movie => (
-                                <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-4 my-4" key={movie.id}>
+                                <div className="col-xxl-3 col-xl-2 col-lg-2 col-md-3 col-sm-4 col-4 mb-3 my-1" key={movie.id}>
                                     <div className="cinema-card">
                                         <img className="card-img-top" src={movie.image} alt={movie.title} />
                                         <div className="card-body text-center mx-auto">
                                             <h6 className="card-title">{truncateText(movie.title, 15)}</h6>
                                             <p className="card-text">{truncateDescription(movie.description, 10)}</p>
-
-                                            {/* Chỉ hiển thị nút Trailer nếu có link trailer */}
                                             {movie.trailer_url && (
                                                 <button
                                                     className="btn-primary"
