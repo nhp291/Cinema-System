@@ -1,169 +1,216 @@
 import React, { useState } from 'react';
 import Layout from '../containers/Layout_User';
-import { Carousel, Card, Button } from 'react-bootstrap';
+import { Carousel, Card, Button, Row, Col, Modal } from 'react-bootstrap';
 import '../styles/user/Home.scss';
 import { movies, news } from '../mock/mockData';
+import { useMediaQuery } from 'react-responsive';
+import { Movie, NewsItem } from '../types';
 
 import banner1 from '../assets/banner1.png';
 import banner2 from '../assets/banner2.png';
 import banner3 from '../assets/banner3.png';
 
+const MovieSection: React.FC<{ title: string; filter: (movie: Movie) => boolean }> = ({ title, filter }) => {
+    const [showTrailer, setShowTrailer] = useState(false);
+    const [trailerUrl, setTrailerUrl] = useState('');
+
+    const truncate = (text: string, limit: number, byWord: boolean = false): string => {
+        if (byWord) {
+            const words = text.split(' ');
+            return words.length > limit ? words.slice(0, limit).join(' ') + '...' : text;
+        }
+        return text.length > limit ? text.slice(0, limit) + '...' : text;
+    };
+
+    const handleShowTrailer = (url: string) => {
+        setTrailerUrl(url);
+        setShowTrailer(true);
+    };
+
+    const handleCloseTrailer = () => {
+        setShowTrailer(false);
+        setTrailerUrl('');
+    };
+
+    const isYouTubeUrl = (url: string) => {
+        return url.includes('youtube.com') || url.includes('youtu.be');
+    };
+
+    const getYouTubeEmbedUrl = (url: string) => {
+        if (!isYouTubeUrl(url)) return url;
+        const videoId = url.match(/(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/)?.[1];
+        return videoId ? `https://www.youtube.com/embed/${videoId}?autoplay=1` : url;
+    };
+
+    return (
+        <section className="movies-section mb-5">
+            <h4 className="text-center title-section mb-4">{title}</h4>
+            <Row xs={2} sm={3} md={4} lg={4} xl={4} xxl={4} className="g-4 justify-content-center">
+                {(movies as Movie[]).filter(filter).slice(0, 8).map(movie => (
+                    <Col key={movie.id}>
+                        <Card className="cinema-card h-100">
+                            <Card.Img variant="top" src={movie.image || ''} alt={movie.title} />
+                            <Card.Body>
+                                <Card.Title>{truncate(movie.title, 15)}</Card.Title>
+                                <Card.Text>{truncate(movie.description, 10, true)}</Card.Text>
+                                <div className="d-flex flex-column gap-2">
+                                    {movie.trailer_url && (
+                                        <Button variant="primary" onClick={() => handleShowTrailer(movie.trailer_url)}>
+                                            Trailer
+                                        </Button>
+                                    )}
+                                    <Button variant="outline-secondary">Chi tiết</Button>
+                                    <Button variant="success">Đặt ngay</Button>
+                                </div>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                ))}
+            </Row>
+            <div className="text-center mt-4">
+                <Button variant="light" href="/movie" className="button-XT">Xem thêm</Button>
+            </div>
+
+            <Modal show={showTrailer} onHide={handleCloseTrailer} centered size="lg">
+                <Modal.Header closeButton>
+                    <Modal.Title>Xem Trailer</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {trailerUrl && (
+                        isYouTubeUrl(trailerUrl) ? (
+                            <iframe
+                                width="100%"
+                                height="400"
+                                src={getYouTubeEmbedUrl(trailerUrl)}
+                                title="Trailer"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        ) : (
+                            <p>Trailer không phải từ YouTube hoặc không hỗ trợ nhúng.</p>
+                        )
+                    )}
+                </Modal.Body>
+            </Modal>
+        </section>
+    );
+};
+
 const HomePage: React.FC = () => {
     const [index, setIndex] = useState(0);
+    const isDesktop = useMediaQuery({ minWidth: 769 });
 
-    const handleSelect = (selectedIndex: number) => {
-        setIndex(selectedIndex);
-    };
+    const handleSelect = (selectedIndex: number) => setIndex(selectedIndex);
 
     const banners = [
-        { src: banner1, alt: 'Banner 1', title: 'Banner 1', description: 'Đây là nội dung của Banner 1.' },
-        { src: banner2, alt: 'Banner 2', title: 'Banner 2', description: 'Đây là nội dung của Banner 2.' },
-        { src: banner3, alt: 'Banner 3', title: 'Banner 3', description: 'Đây là nội dung của Banner 3.' },
+        { src: banner1, alt: 'Banner 1' },
+        { src: banner2, alt: 'Banner 2' },
+        { src: banner3, alt: 'Banner 3' },
     ];
 
-    // Hàm giới hạn số ký tự của title
-    const truncateText = (text: string, charLimit: number): string => {
-        return text.length > charLimit ? text.slice(0, charLimit) + '...' : text;
-    };
-
-    // Hàm giới hạn số từ của description
-    const truncateDescription = (text: string, wordLimit: number): string => {
-        const words = text.split(' ');
-        return words.length > wordLimit ? words.slice(0, wordLimit).join(' ') + '...' : text;
+    const truncate = (text: string, limit: number, byWord: boolean = false): string => {
+        if (byWord) {
+            const words = text.split(' ');
+            return words.length > limit ? words.slice(0, limit).join(' ') + '...' : text;
+        }
+        return text.length > limit ? text.slice(0, limit) + '...' : text;
     };
 
     return (
         <Layout>
             <div className="container">
-                <section className="carousel-section">
+                <section className="carousel-section mb-5">
                     <Carousel
                         activeIndex={index}
                         onSelect={handleSelect}
                         controls={false}
-                        indicators={true}
+                        indicators
                         interval={5000}
                         fade
                     >
                         {banners.map((banner, idx) => (
                             <Carousel.Item key={idx}>
-                                <img
-                                    className="d-block w-100"
-                                    src={banner.src}
-                                    alt={banner.alt}
-                                />
+                                <img className="d-block w-100" src={banner.src} alt={banner.alt} />
                             </Carousel.Item>
                         ))}
                     </Carousel>
                 </section>
 
-                <section className="movies-section mt-5">
-                    <h4 className="text-center title-section"><strong>PHIM ĐANG CHIẾU</strong></h4>
-                    <div className="row mt-3 col-9 justify-content-center mx-auto">
-                        {movies
-                            .filter(movie => {
-                                // Lọc phim có release_date từ thời điểm hiện tại trở về trước
-                                const releaseDate = new Date(movie.release_date);
-                                return releaseDate <= new Date();
-                            })
-                            .slice(0, 8) // Giới hạn hiển thị 8 phim
-                            .map(movie => (
-                                <div className="col-xxl-3 col-xl-2 col-lg-2 col-md-3 col-sm-4 col-4 mb-3 my-1" key={movie.id}>
-                                    <div className="cinema-card">
-                                        <img className="card-img-top" src={movie.image} alt={movie.title} />
-                                        <div className="card-body text-center mx-auto">
-                                            <h6 className="card-title">{truncateText(movie.title, 15)}</h6>
-                                            <p className="card-text">{truncateDescription(movie.description, 10)}</p>
-                                            {movie.trailer_url && (
-                                                <button
-                                                    className="btn-primary"
-                                                    onClick={() => window.open(movie.trailer_url, '_blank')}
-                                                >
-                                                    Trailer
-                                                </button>
-                                            )}
-                                            <button className="btn-details">Chi tiết</button>
-                                            <button className="btn-book">Đặt ngay</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                    </div>
-                    <a href="/movie" className="bg-light mx-auto d-flex justify-content-center btn button-XT">
-                        <strong>Xem thêm</strong>
-                    </a>
-                </section>
+                <MovieSection
+                    title="PHIM ĐANG CHIẾU"
+                    filter={(movie: Movie) => new Date(movie.release_date) <= new Date()}
+                />
+                <MovieSection
+                    title="PHIM SẮP CHIẾU"
+                    filter={(movie: Movie) => new Date(movie.release_date) > new Date()}
+                />
 
-                <section className="movies-section mt-5">
-                    <h4 className="text-center title-section"><strong>PHIM SẮP CHIẾU</strong></h4>
-                    <div className="row mt-3">
-                        {movies
-                            .filter(movie => {
-                                // Lọc phim có release_date từ thời điểm hiện tại trở về trước
-                                const releaseDate = new Date(movie.release_date);
-                                return releaseDate >= new Date();
-                            })
-                            .slice(0, 8) // Giới hạn hiển thị 8 phim
-                            .map(movie => (
-                                <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6 mb-4 my-4" key={movie.id}>
-                                    <div className="cinema-card">
-                                        <img className="card-img-top" src={movie.image} alt={movie.title} />
-                                        <div className="card-body text-center mx-auto">
-                                            <h6 className="card-title">{truncateText(movie.title, 15)}</h6>
-                                            <p className="card-text">{truncateDescription(movie.description, 10)}</p>
-
-                                            {/* Chỉ hiển thị nút Trailer nếu có link trailer */}
-                                            {movie.trailer_url && (
-                                                <button
-                                                    className="btn-primary"
-                                                    onClick={() => window.open(movie.trailer_url, '_blank')}
-                                                >
-                                                    Trailer
-                                                </button>
-                                            )}
-                                            <button className="btn-details">Chi tiết</button>
-                                            <button className="btn-book">Đặt ngay</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                    </div>
-                    <a href="/movie" className="bg-light mx-auto d-flex justify-content-center btn button-XT">
-                        <strong>Xem thêm</strong>
-                    </a>
-                </section>
-
-                <section className="news-carousel mt-5 me-3">
-                    <h4 className="text-center title-section mb-4">
-                        <strong>TIN TỨC</strong>
-                    </h4>
+                <section className="news-carousel mb-5">
+                    <h4 className="text-center title-section mb-4">TIN TỨC</h4>
                     <Carousel indicators interval={3000} pause="hover" slide>
-                        {news.map((item, index) => (
-                            <Carousel.Item key={index}>
-                            <div className="carousel-item-content d-flex justify-content-center align-items-center">
-                                <div className="card news-card">
-                                <img className="card-img-top" src={item.image_url} alt={item.title} />
-                                <div className="card-body">
-                                    <h5 className="card-title">{truncateText(item.title, 40)}</h5>
-                                    <a href={item.image_url} className="btn btn-primary">Đọc thêm</a>
-                                </div>
-                                </div>
-
-                                {/* Chỉ hiển thị card thứ 2 nếu màn hình lớn hơn 768px */}
-                                {window.innerWidth > 768 && news[index + 1] && (
-                                <div className="card news-card">
-                                    <img className="card-img-top" src={news[index + 1].image_url} alt={news[index + 1].title} />
-                                    <div className="card-body">
-                                    <h5 className="card-title">{truncateText(news[index + 1].title, 40)}</h5>
-                                    <a href={news[index + 1].image_url} className="btn btn-primary">Đọc thêm</a>
-                                    </div>
-                                </div>
-                                )}
-                            </div>
+                        {(news as NewsItem[]).map((item, idx) => (
+                            <Carousel.Item key={idx}>
+                                <Row className="justify-content-center g-4">
+                                    <Col xs={12} md={6} lg={5}>
+                                        <Card className="news-card h-100">
+                                            <div className="news-card-img-wrapper">
+                                                <Card.Img variant="top" src={item.image_url} alt={item.title} />
+                                            </div>
+                                            <Card.Body className="d-flex flex-column">
+                                                <Card.Title className="news-card-title">
+                                                    {truncate(item.title, 40)}
+                                                </Card.Title>
+                                                {item.description && (
+                                                    <Card.Text className="news-card-text">
+                                                        {truncate(item.description, 20, true)}
+                                                    </Card.Text>
+                                                )}
+                                                <Button
+                                                    variant="primary"
+                                                    href={item.url ?? item.image_url}
+                                                    className="news-card-btn mt-auto"
+                                                >
+                                                    Đọc thêm
+                                                </Button>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    {isDesktop && news[idx + 1] && (
+                                        <Col xs={12} md={6} lg={5}>
+                                            <Card className="news-card h-100">
+                                                <div className="news-card-img-wrapper">
+                                                    <Card.Img
+                                                        variant="top"
+                                                        src={news[idx + 1].image_url}
+                                                        alt={news[idx + 1].title}
+                                                    />
+                                                </div>
+                                                <Card.Body className="d-flex flex-column">
+                                                    <Card.Title className="news-card-title">
+                                                        {truncate(news[idx + 1].title, 40)}
+                                                    </Card.Title>
+                                                    {item.description && (
+                                                        <Card.Text className="news-card-text">
+                                                            {truncate(item.description, 20, true)}
+                                                        </Card.Text>
+                                                    )}
+                                                    <Button
+                                                        variant="primary"
+                                                        href={(news[idx + 1] as NewsItem).url ?? news[idx + 1].image_url}
+                                                        className="news-card-btn mt-auto"
+                                                    >
+                                                        Đọc thêm
+                                                    </Button>
+                                                </Card.Body>
+                                            </Card>
+                                        </Col>
+                                    )}
+                                </Row>
                             </Carousel.Item>
                         ))}
                     </Carousel>
                 </section>
-
             </div>
         </Layout>
     );
